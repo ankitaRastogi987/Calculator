@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="cal.css">
+</head>
+<body>
+	<div class="calc">
+		<form name="form">
+			<input class="calc-display" value='0'>
+		</form>
+		<table>
+			<tr>
+				<td><input class="num" type="button" value="C" onclick="c()"></td>
+				<td><input class="operator" type="button" value="/" onclick="insert('/')"></td>
+				<td><input class="num" type="button" value="<" onclick="del()"></td>
+				<td><input class="operator" type="button" value="x" onclick="insert('*')"></td>
+			</tr>
+			<tr>
+				<td><input class="num" type="button" value="7" onclick="insert(7)"></td>
+				<td><input class="num" type="button" value="8" onclick="insert(8)"></td>
+				<td><input class="num" type="button" value="9" onclick="insert(9)"></td>
+				<td><input class="operator" type="button" value="-" onclick="insert('-')"></td>
+			</tr>
+			<tr>
+				<td><input class="num" type="button" value="4" onclick="insert(4)"></td>
+				<td><input class="num" type="button" value="5" onclick="insert(5)"></td>
+				<td><input class="num" type="button" value="6" onclick="insert(6)"></td>
+				<td><input class="operator" type="button" value="+" onclick="insert('+')"></td>
+			</tr>
+			<tr>
+				<td><input class="num" type="button" value="1" onclick="insert(1)"></td>
+				<td><input class="num" type="button" value="2" onclick="insert(2)"></td>
+				<td><input class="num" type="button" value="3" onclick="insert(3)"></td>
+				<td rowspan="2"><input class="num" type="button" value="=" onclick="eql()" style="height: 158px;background-color: orange;"></td>
+			</tr>
+			<tr>
+				<td colspan='2'><input type="button" class="num" value="0" onclick="insert(0)" style="width: 158px;"></td>
+				<td><input type="button" class="operator" value="." onclick="insert('.')"></td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="cal.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($)
+		{
+			$('.operator').click(function(event) 
+			{
+				$('.operator').attr('disabled',true);
+			});
+			$('.num').click(function(event) 
+			{
+				$('.operator').attr('disabled',false);
+			});
+		});
+	</script>
+</body>
+</html>
